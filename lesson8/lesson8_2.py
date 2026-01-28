@@ -1,5 +1,6 @@
 import os
 
+#使用names.txt的絕對路徑
 current_dir = os.path.dirname(os.path.abspath("__file__"))
 file_path = os.path.join(current_dir,'lesson8','assets','names.txt')
 
