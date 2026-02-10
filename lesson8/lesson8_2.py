@@ -25,5 +25,5 @@ def get_scores(names,num=7):
 
     
 names=get_names("names.txt")
-students=get_scores(names,num=5)
+students=get_scores(names,num=50)
 print(students)
