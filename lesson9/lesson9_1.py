@@ -26,8 +26,8 @@ def get_scores(names,num=10):
 
 fieldnames = ["姓名", "國文", "英文", "數學"]
 
-def save_csv(student,filename):
-    fildnames=students[0].keys()
+def save_csv(students,filename):
+    fieldnames=students[0].keys()
     current_dir=os.path.dirname(os.path.abspath('__file__'))
     file_path=os.path.join(current_dir,'assets','student.csv')
 
@@ -37,7 +37,10 @@ def save_csv(student,filename):
         for d in students:
             writer.writerow(d)
 
-names=get_names("names.txt")
-num=int(input("請輸入學生數量:"))
-students = get_scores(names,num=num)
-save_csv(students,'students.csv')
+def main():
+    names=get_names("names.txt")
+    num=int(input("請輸入學生數量:"))
+    students = get_scores(names,num=num)
+    save_csv(students,'students.csv')
+
+main()

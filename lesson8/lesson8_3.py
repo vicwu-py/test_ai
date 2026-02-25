@@ -37,7 +37,9 @@ def save_csv(student,filename):
         for d in students:
             writer.writerow(d)
 
-names=get_names("names.txt")
-num=int(input("請輸入學生數量:"))
-students = get_scores(names,num=num)
-save_csv(students,'students.csv')
+def main():
+    names=get_names("names.txt")
+    num=int(input("請輸入學生數量:"))
+    students = get_scores(names,num=num)
+    save_csv(students,'students.csv')
+main()
