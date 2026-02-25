@@ -1,1 +1,1 @@
-print(type(__name__))
+print(__name__)
