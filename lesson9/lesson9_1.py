@@ -3,7 +3,10 @@ import random
 import csv
 
 def get_names(file_name:str)->list[str]:
-    #使用names.txt的絕對路徑
+    """"
+    傳入檔案名稱,讀取assets內的txt,並且轉換txt成為list,並傳出
+    """"
+
     current_dir=os.path.dirname(os.path.abspath("__file__"))
     file_path=os.path.join(current_dir,'assets',file_name)
 
