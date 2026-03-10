@@ -2,7 +2,7 @@ import os
 import random
 import csv
 
-def get_names(file_name):
+def get_names(file_name:str)->list[str]:
     #使用names.txt的絕對路徑
     current_dir=os.path.dirname(os.path.abspath("__file__"))
     file_path=os.path.join(current_dir,'assets',file_name)
@@ -12,7 +12,7 @@ def get_names(file_name):
 
     return content.split('\n')
 
-def get_scores(names,num=10):
+def get_scores(names:list[str],num:int=10)->list[dict]:
     stu_names=random.sample(names,num)
     scores=[]
     for name in stu_names:
@@ -26,7 +26,7 @@ def get_scores(names,num=10):
 
 fieldnames = ["姓名", "國文", "英文", "數學"]
 
-def save_csv(students,filename):
+def save_csv(students:list[dict],filename:str)->None:
     fieldnames=students[0].keys()
     current_dir=os.path.dirname(os.path.abspath('__file__'))
     file_path=os.path.join(current_dir,'assets','student.csv')
@@ -38,9 +38,9 @@ def save_csv(students,filename):
             writer.writerow(d)
 
 def main():
-    names=get_names("names.txt")
-    num=int(input("請輸入學生數量:"))
-    students = get_scores(names,num=num)
+    names:list[str]=get_names("names.txt")
+    num:int=int(input("請輸入學生數量:"))
+    students:list[dict] = get_scores(names,num=num)
     save_csv(students,'students.csv')
 
 if __name__=='__main__':
